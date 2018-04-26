@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/pepabo/tukki.js/issues"
   },
-  "homepage": "https://github.com/pepabo/tukki.js#readme"
+  "homepage": "https://github.com/pepabo/tukki.js#readme",
+  "devDependencies": {
+    "tslint": "^5.9.1",
+    "tslint-microsoft-contrib": "^5.0.3",
+    "typescript": "^2.8.3"
+  }
 }
