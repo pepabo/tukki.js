@@ -1,0 +1,19 @@
+{
+  "name": "muu",
+  "version": "0.1.0",
+  "description": "API Client for MuumuuDomain.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pepabo/tukki.js.git"
+  },
+  "author": "kimromi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pepabo/tukki.js/issues"
+  },
+  "homepage": "https://github.com/pepabo/tukki.js#readme"
+}
