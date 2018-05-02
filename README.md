@@ -20,12 +20,14 @@ Usage
 
 ### Node.js
 
-```js
-```
+```javascript
+import Muu from 'muumuu'
 
-### TypeScript
-
-```ts
+# authenticate
+const res = await Muu.authenticate({id: 'muu-id', password: 'password'})
+if (res.status == 201) {
+  const token = res.data.jwt
+}
 ```
 
 Contribution
