@@ -3,7 +3,7 @@ tukki.js
 
 Simple Nodejs wrapper for MuumuuDomain API
 
-<a href="https://www.npmjs.com/package/muu" title="npm"><img src="http://img.shields.io/npm/v/muu.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/muumuu" title="npm"><img src="http://img.shields.io/npm/v/muumuu.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/pepabo/tukki.js" title="travis"><img src="https://img.shields.io/travis/pepabo/tukki.js.svg?style=flat-square"></a>
 <a href="https://coveralls.io/github/pepabo/tukki.js" title="coveralls"><img src="https://img.shields.io/coveralls/pepabo/tukki.js.svg?style=flat-square"></a>
 <a href="https://github.com/pepabo/tukki.js/blob/master/MIT-LICENSE" title="MIT License"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square"></a>
