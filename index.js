@@ -1,6 +1,6 @@
 'use strict';
 
-const muu = require('./lib/muu').default;
+const muu = require('./lib/muumuu').default;
 
 // Create the default instance to be exported
 var muuInstance = muu.CREATE();

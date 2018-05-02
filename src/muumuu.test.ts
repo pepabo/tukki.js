@@ -1,5 +1,5 @@
 import Test from 'ava'
-import Muu from './muu'
+import Muu from './muumuu'
 
 Test('new Muu returns a instance', (t) => {
   const muu = new Muu()
