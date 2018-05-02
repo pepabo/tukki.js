@@ -1,6 +1,6 @@
 import Axios, {AxiosInstance} from 'axios'
 import * as Merge from 'deepmerge'
-import {BuildByEnv, IConfig, Defaults} from './config'
+import {buildByEnv, IConfig, defaultConfig} from './config'
 
 export default class Muu {
   public name: string = 'Muu'
@@ -11,8 +11,8 @@ export default class Muu {
   public authenticate: (args: any) => any
 
   constructor(config?: IConfig) {
-    this.config = config === undefined ? Defaults : Merge(Defaults, config)
-    const configByEnv: IConfig = BuildByEnv()
+    this.config = config === undefined ? defaultConfig : Merge(defaultConfig, config)
+    const configByEnv: IConfig = buildByEnv()
     if (configByEnv !== {}) {
       this.config = Merge(this.config, configByEnv)
     }

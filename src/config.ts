@@ -10,7 +10,7 @@ const msec = 1000
 const sec = 60
 const min = 3
 
-export const Defaults: IConfig = {
+export const defaultConfig: IConfig = {
   axios: {
     timeout: min * sec * msec,
     baseURL: 'https://muumuu-domain.com',
@@ -20,7 +20,7 @@ export const Defaults: IConfig = {
   }
 }
 
-export function BuildByEnv(): IConfig {
+export function buildByEnv(): IConfig {
   const c: IConfig = {}
   c.axios = {}
 

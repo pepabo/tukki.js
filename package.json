@@ -27,7 +27,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "npm run build && ava -v"
+    "test": "npm run build && ava -v",
+    "lint": "tslint -p tsconfig.json -c tslint.json src/**/*.ts"
   },
   "ava": {
     "files": [

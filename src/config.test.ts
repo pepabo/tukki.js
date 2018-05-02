@@ -1,5 +1,5 @@
 import Test from 'ava'
-import {BuildByEnv, Defaults} from './config'
+import {buildByEnv, defaultConfig} from './config'
 import * as Process from 'process'
 
 Test('defaults returns default config', (t) => {
@@ -12,14 +12,14 @@ Test('defaults returns default config', (t) => {
       }
     }
   }
-  t.deepEqual(Defaults, expect)
+  t.deepEqual(defaultConfig, expect)
 })
 
-Test('BuildByEnv returns config', (t) => {
-  t.deepEqual(BuildByEnv(), { axios: {} })
+Test('buildByEnv returns config', (t) => {
+  t.deepEqual(buildByEnv(), { axios: {} })
 })
 
-Test('BuildByEnv returns config with env', (t) => {
+Test('buildByEnv returns config with env', (t) => {
   Process.env.MUU_API_ENDPOINT = 'https://foo.com'
   Process.env.MUU_TIMEOUT = '123'
 
@@ -29,5 +29,5 @@ Test('BuildByEnv returns config with env', (t) => {
       timeout: 123
     }
   }
-  t.deepEqual(BuildByEnv(), expect)
+  t.deepEqual(buildByEnv(), expect)
 })
