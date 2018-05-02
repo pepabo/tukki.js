@@ -2,7 +2,9 @@ import Axios, {AxiosInstance} from 'axios'
 import * as Merge from 'deepmerge'
 import {buildByEnv, IConfig, defaultConfig} from './config'
 
-export default class Muu {
+import User from './client/user'
+
+export default class Muu implements User {
   public name: string = 'Muu'
   public config: IConfig
   public client: AxiosInstance
@@ -23,3 +25,5 @@ export default class Muu {
     return new Muu(config)
   }
 }
+
+Muu.prototype.authenticate = User.prototype.authenticate
