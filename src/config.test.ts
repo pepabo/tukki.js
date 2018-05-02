@@ -5,7 +5,7 @@ import * as Process from 'process'
 Test('defaults returns default config', (t) => {
   const expect = {
     axios: {
-      baseURL: 'https://muumuu-domain.com',
+      baseURL: 'https://muumuu-domain.com/api/v1',
       timeout: 180000,
       headers: {
         'user-agent': 'tukki.js v0.1.0'

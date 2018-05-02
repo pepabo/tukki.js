@@ -13,7 +13,7 @@ const min = 3
 export const defaultConfig: IConfig = {
   axios: {
     timeout: min * sec * msec,
-    baseURL: 'https://muumuu-domain.com',
+    baseURL: 'https://muumuu-domain.com/api/v1',
     headers: {
       'user-agent': `tukki.js v${(<any>Package).version}`
     }
