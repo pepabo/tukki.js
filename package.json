@@ -1,5 +1,5 @@
 {
-  "name": "muu",
+  "name": "muumuu",
   "version": "0.1.0",
   "description": "API Client for MuumuuDomain.",
   "main": "index.js",
@@ -13,6 +13,16 @@
     "url": "https://github.com/pepabo/tukki.js/issues"
   },
   "homepage": "https://github.com/pepabo/tukki.js#readme",
+  "files": [
+    "MIT-LICENSE",
+    "README.md",
+    "index.js",
+    "lib/"
+  ],
+  "directories": {
+    "lib": "./lib",
+    "src": "./src"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "deepmerge": "^2.1.0"
