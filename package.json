@@ -17,7 +17,8 @@
     "MIT-LICENSE",
     "README.md",
     "index.js",
-    "lib/"
+    "lib/",
+    "src/"
   ],
   "directories": {
     "lib": "./lib",
