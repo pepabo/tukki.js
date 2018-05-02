@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "API Client for MuumuuDomain.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/pepabo/tukki.js.git"
@@ -16,15 +13,25 @@
     "url": "https://github.com/pepabo/tukki.js/issues"
   },
   "homepage": "https://github.com/pepabo/tukki.js#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "deepmerge": "^2.1.0"
+  },
   "devDependencies": {
     "@types/deepmerge": "^2.1.0",
     "@types/node": "^10.0.2",
+    "ava": "^0.25.0",
     "tslint": "^5.9.1",
     "tslint-microsoft-contrib": "^5.0.3",
     "typescript": "^2.8.3"
   },
-  "dependencies": {
-    "axios": "^0.18.0",
-    "deepmerge": "^2.1.0"
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && ava -v"
+  },
+  "ava": {
+    "files": [
+      "./lib/**/*.test.js"
+    ]
   }
 }
