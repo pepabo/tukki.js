@@ -1,6 +1,6 @@
 {
   "name": "muumuu",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "API Client for MuumuuDomain.",
   "main": "index.js",
   "types": "lib/muumuu.d.ts",
