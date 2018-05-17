@@ -10,7 +10,7 @@ import {
   IRecommendedDomainsResult
 } from './client/domain.interface'
 
-export default class Muu implements User {
+export default class Muu implements User, Domain {
   public name: string = 'Muu'
   public config: IConfig
   public client: AxiosInstance
