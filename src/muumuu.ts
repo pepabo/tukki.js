@@ -6,7 +6,8 @@ import User from './client/user'
 import Domain from './client/domain'
 
 import {
-  IDomainCategoriesResult
+  IDomainCategoriesResult,
+  IRecommendedDomainsResult
 } from './client/domain.interface'
 
 export default class Muu implements User {
@@ -17,6 +18,7 @@ export default class Muu implements User {
 
   public authenticate: (args: any) => any
   public domainCategories: () => Promise<IDomainCategoriesResult>
+  public recommendedDomains: () => Promise<IRecommendedDomainsResult>
 
   constructor(config?: IConfig) {
     this.config = config === undefined ? defaultConfig : Merge(defaultConfig, config)
@@ -34,3 +36,4 @@ export default class Muu implements User {
 
 Muu.prototype.authenticate = User.prototype.authenticate
 Muu.prototype.domainCategories = Domain.prototype.domainCategories
+Muu.prototype.recommendedDomains = Domain.prototype.recommendedDomains
