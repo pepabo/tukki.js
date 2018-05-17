@@ -8,7 +8,7 @@ Test('defaults returns default config', (t) => {
       baseURL: 'https://muumuu-domain.com/api/v1',
       timeout: 180000,
       headers: {
-        'user-agent': 'tukki.js v0.1.1'
+        'user-agent': 'tukki.js v0.1.2'
       }
     }
   }
