@@ -33,6 +33,7 @@
     "no-relative-imports": false,
     "no-unnecessary-initializer": true,
     "no-unsafe-any": false,
+    "no-reserved-keywords": false,
     "prefer-function-over-method": true,
     "prefer-method-signature": true,
     "no-backbone-get-set-outside-model": false,

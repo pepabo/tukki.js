@@ -12,7 +12,7 @@ Installation
 ------------
 
 ```sh
-$ npm install muu --save
+$ npm install muumuu --save
 ```
 
 Usage
@@ -27,6 +27,18 @@ import Muu from 'muumuu'
 const res = await Muu.authenticate({id: 'muu-id', password: 'password'})
 if (res.status == 201) {
   const token = res.data.jwt
+}
+
+# get domain categories
+const res = await Muu.domainCategories()
+if (res.status == 200) {
+  const categories = res.data
+}
+
+# get recomended domains
+const res = await Muu.recomendedDomains()
+if (res.status == 200) {
+  const recomendedDomains = res.data
 }
 ```
 
