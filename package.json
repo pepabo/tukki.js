@@ -1,6 +1,6 @@
 {
   "name": "muumuu",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "API Client for MuumuuDomain.",
   "main": "index.js",
   "repository": {
