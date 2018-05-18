@@ -1,8 +1,8 @@
 {
   "name": "muumuu",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "API Client for MuumuuDomain.",
-  "main": "index.js",
+  "main": "lib/muumuu.js",
   "types": "lib/muumuu.d.ts",
   "repository": {
     "type": "git",

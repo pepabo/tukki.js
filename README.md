@@ -23,20 +23,22 @@ Usage
 ```javascript
 import Muu from 'muumuu'
 
+const muu = new Muu()
+
 # authenticate
-const res = await Muu.authenticate({id: 'muu-id', password: 'password'})
+const res = await muu.authenticate({id: 'muu-id', password: 'password'})
 if (res.status == 201) {
   const token = res.data.jwt
 }
 
 # get domain categories
-const res = await Muu.domainCategories()
+const res = await muu.domainCategories()
 if (res.status == 200) {
   const categories = res.data
 }
 
 # get recomended domains
-const res = await Muu.recomendedDomains()
+const res = await muu.recomendedDomains()
 if (res.status == 200) {
   const recomendedDomains = res.data
 }
