@@ -4,4 +4,8 @@ export interface IAuthenticateArgs {
 }
 
 export interface IAuthenticateResult {
+  status: number
+  data: {
+    jwt: string;
+  }
 }
