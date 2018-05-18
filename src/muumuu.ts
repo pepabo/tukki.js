@@ -6,7 +6,13 @@ import User from './client/user'
 import Domain from './client/domain'
 
 import {
+  IAuthenticateArgs,
+  IAuthenticateResult
+} from './client/user.interface'
+import {
+  IDomainCategory,
   IDomainCategoriesResult,
+  IMostRecommendedDomains,
   IRecommendedDomainsResult
 } from './client/domain.interface'
 
@@ -15,7 +21,7 @@ export default class Muu implements User, Domain {
   public config: IConfig
   public client: AxiosInstance
 
-  public authenticate: (args: any) => any
+  public authenticate: (args: IAuthenticateArgs) => Promise<IAuthenticateResult>
   public domainCategories: () => Promise<IDomainCategoriesResult>
   public recommendedDomains: () => Promise<IRecommendedDomainsResult>
 
@@ -28,7 +34,16 @@ export default class Muu implements User, Domain {
     this.client = Axios.create(this.config.axios)
   }
 }
-
 Muu.prototype.authenticate = User.prototype.authenticate
 Muu.prototype.domainCategories = Domain.prototype.domainCategories
 Muu.prototype.recommendedDomains = Domain.prototype.recommendedDomains
+
+export {
+  IConfig,
+  IAuthenticateArgs,
+  IAuthenticateResult,
+  IDomainCategory,
+  IDomainCategoriesResult,
+  IMostRecommendedDomains,
+  IRecommendedDomainsResult
+}

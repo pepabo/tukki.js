@@ -6,7 +6,7 @@ import Muu from '../muumuu'
 const CREATED = 201
 const UNAUTHORIZED = 401
 const TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MjY0NTYwNTEsInN'  // dummy
-const authenticateParams = {id: 'muumuu', passwords: 'xxxx'}
+const authenticateParams = {id: 'muumuu', password: 'xxxx'}
 
 Test('succeed authenticate', async (t) => {
   const mock = new MockAdapter(axios)

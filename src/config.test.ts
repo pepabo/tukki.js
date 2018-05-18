@@ -1,6 +1,7 @@
 import Test from 'ava'
 import {buildByEnv, defaultConfig} from './config'
 import * as Process from 'process'
+import * as Package from '../package.json'
 
 Test('defaults returns default config', (t) => {
   const expect = {
@@ -8,7 +9,7 @@ Test('defaults returns default config', (t) => {
       baseURL: 'https://muumuu-domain.com/api/v1',
       timeout: 180000,
       headers: {
-        'user-agent': 'tukki.js v0.1.3'
+        'user-agent': `tukki.js v${(<any>Package).version}`
       }
     }
   }
