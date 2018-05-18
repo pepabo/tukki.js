@@ -17,7 +17,6 @@
   "files": [
     "MIT-LICENSE",
     "README.md",
-    "index.js",
     "tsconfig.json",
     "lib/",
     "src/"
