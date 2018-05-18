@@ -27,10 +27,6 @@ export default class Muu implements User, Domain {
     }
     this.client = Axios.create(this.config.axios)
   }
-
-  public static CREATE(config: IConfig): Muu {
-    return new Muu(config)
-  }
 }
 
 Muu.prototype.authenticate = User.prototype.authenticate
