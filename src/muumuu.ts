@@ -14,7 +14,6 @@ export default class Muu implements User, Domain {
   public name: string = 'Muu'
   public config: IConfig
   public client: AxiosInstance
-  public options: object
 
   public authenticate: (args: any) => any
   public domainCategories: () => Promise<IDomainCategoriesResult>
