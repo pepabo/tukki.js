@@ -3,9 +3,6 @@ export interface TukkiAuthenticateArgs {
   password: string
 }
 
-export interface TukkiAuthenticateResult {
-  status: number
-  data: {
-    jwt: string;
-  }
+export interface TukkiAuthenticated {
+  jwt: string
 }
