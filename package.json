@@ -2,8 +2,8 @@
   "name": "muumuu",
   "version": "0.1.4",
   "description": "API Client for MuumuuDomain.",
-  "main": "lib/muumuu.js",
-  "types": "lib/muumuu.d.ts",
+  "main": "lib/tukki.js",
+  "types": "lib/tukki.d.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/pepabo/tukki.js.git"
