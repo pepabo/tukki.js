@@ -21,24 +21,24 @@ Usage
 ### Node.js
 
 ```javascript
-import Muu from 'muumuu'
+import Tukki from 'muumuu'
 
-const muu = new Muu()
+const tukki = new Tukki()
 
 # authenticate
-const res = await muu.authenticate({id: 'muu-id', password: 'password'})
+const res = await tukki.authenticate({id: 'muu-id', password: 'password'})
 if (res.status == 201) {
   const token = res.data.jwt
 }
 
 # get domain categories
-const res = await muu.domainCategories()
+const res = await tukki.domainCategories()
 if (res.status == 200) {
   const categories = res.data
 }
 
 # get recomended domains
-const res = await muu.recomendedDomains()
+const res = await tukki.recomendedDomains()
 if (res.status == 200) {
   const recomendedDomains = res.data
 }
