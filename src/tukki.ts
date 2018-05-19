@@ -6,8 +6,8 @@ import User from './client/user'
 import Domain from './client/domain'
 
 import {
-  IAuthenticateArgs,
-  IAuthenticateResult
+  TukkiAuthenticateArgs,
+  TukkiAuthenticateResult
 } from './client/user.interface'
 import {
   TukkiDomainCategory,
@@ -21,7 +21,7 @@ export default class Tukki implements User, Domain {
   public config: TukkiConfig
   public client: AxiosInstance
 
-  public authenticate: (args: IAuthenticateArgs) => Promise<IAuthenticateResult>
+  public authenticate: (args: TukkiAuthenticateArgs) => Promise<TukkiAuthenticateResult>
   public domainCategories: () => Promise<TukkiDomainCategoriesResult>
   public recommendedDomains: () => Promise<TukkiRecommendedDomainsResult>
 
@@ -40,8 +40,8 @@ Tukki.prototype.recommendedDomains = Domain.prototype.recommendedDomains
 
 export {
   TukkiConfig,
-  IAuthenticateArgs,
-  IAuthenticateResult,
+  TukkiAuthenticateArgs,
+  TukkiAuthenticateResult,
   TukkiDomainCategory,
   TukkiDomainCategoriesResult,
   TukkiMostRecommendedDomains,

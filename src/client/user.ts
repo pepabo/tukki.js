@@ -1,13 +1,13 @@
 import { AxiosInstance } from 'axios'
 import {
-  IAuthenticateArgs,
-  IAuthenticateResult
+  TukkiAuthenticateArgs,
+  TukkiAuthenticateResult
 } from './user.interface'
 
 export default class User {
   public client: AxiosInstance
 
-  public async authenticate(args: IAuthenticateArgs): Promise<IAuthenticateResult> {
+  public async authenticate(args: TukkiAuthenticateArgs): Promise<TukkiAuthenticateResult> {
     return this.client.post('/authenticate', args)
   }
 }
