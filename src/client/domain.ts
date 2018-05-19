@@ -1,18 +1,18 @@
 import { AxiosInstance } from 'axios'
 
 import {
-  IDomainCategoriesResult,
-  IRecommendedDomainsResult
+  TukkiDomainCategoriesResult,
+  TukkiRecommendedDomainsResult
 } from './domain.interface'
 
 export default class Domain {
   public client: AxiosInstance
 
-  public async domainCategories(): Promise<IDomainCategoriesResult> {
+  public async domainCategories(): Promise<TukkiDomainCategoriesResult> {
     return this.client.get('/domain_categories')
   }
 
-  public async recommendedDomains(): Promise<IRecommendedDomainsResult> {
+  public async recommendedDomains(): Promise<TukkiRecommendedDomainsResult> {
     return this.client.get('/recommended_domains')
   }
 }

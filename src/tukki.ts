@@ -10,10 +10,10 @@ import {
   IAuthenticateResult
 } from './client/user.interface'
 import {
-  IDomainCategory,
-  IDomainCategoriesResult,
-  IMostRecommendedDomains,
-  IRecommendedDomainsResult
+  TukkiDomainCategory,
+  TukkiDomainCategoriesResult,
+  TukkiMostRecommendedDomains,
+  TukkiRecommendedDomainsResult
 } from './client/domain.interface'
 
 export default class Tukki implements User, Domain {
@@ -22,8 +22,8 @@ export default class Tukki implements User, Domain {
   public client: AxiosInstance
 
   public authenticate: (args: IAuthenticateArgs) => Promise<IAuthenticateResult>
-  public domainCategories: () => Promise<IDomainCategoriesResult>
-  public recommendedDomains: () => Promise<IRecommendedDomainsResult>
+  public domainCategories: () => Promise<TukkiDomainCategoriesResult>
+  public recommendedDomains: () => Promise<TukkiRecommendedDomainsResult>
 
   constructor(config?: TukkiConfig) {
     this.config = config === undefined ? defaultConfig : Merge(defaultConfig, config)
@@ -42,8 +42,8 @@ export {
   TukkiConfig,
   IAuthenticateArgs,
   IAuthenticateResult,
-  IDomainCategory,
-  IDomainCategoriesResult,
-  IMostRecommendedDomains,
-  IRecommendedDomainsResult
+  TukkiDomainCategory,
+  TukkiDomainCategoriesResult,
+  TukkiMostRecommendedDomains,
+  TukkiRecommendedDomainsResult
 }
