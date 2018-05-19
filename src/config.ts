@@ -1,6 +1,5 @@
 import { AxiosRequestConfig } from 'axios'
 import * as Process from 'process'
-import * as Package from '../package.json'
 
 export interface TukkiConfig {
   axios?: AxiosRequestConfig
@@ -13,10 +12,7 @@ const min = 3
 export const defaultConfig: TukkiConfig = {
   axios: {
     timeout: min * sec * msec,
-    baseURL: 'https://muumuu-domain.com/api/v1',
-    headers: {
-      'user-agent': `tukki.js v${(<any>Package).version}`
-    }
+    baseURL: 'https://muumuu-domain.com/api/v1'
   }
 }
 
