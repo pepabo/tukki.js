@@ -1,6 +1,6 @@
 {
   "name": "muumuu",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "API Client for MuumuuDomain.",
   "main": "lib/tukki.js",
   "types": "lib/tukki.d.ts",

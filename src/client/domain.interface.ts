@@ -1,17 +1,12 @@
-export interface TukkiDomainCategory {
-  label: string
-  tlds: string[]
-}
-
 export interface TukkiDomainCategories {
   popular: TukkiDomainCategory
   recommend: TukkiDomainCategory
   new: TukkiDomainCategory
 }
 
-export interface TukkiDomainCategoriesResult {
-  status: number
-  data: TukkiDomainCategories
+export interface TukkiDomainCategory {
+  label: string
+  tlds: string[]
 }
 
 export interface TukkiRecommendedDomains {
@@ -25,9 +20,4 @@ export interface TukkiRecommendedDomains {
 export interface TukkiMostRecommendedDomains {
   tld: string
   price: number
-}
-
-export interface TukkiRecommendedDomainsResult {
-  status: number
-  data: TukkiRecommendedDomains
 }

@@ -1,4 +1,4 @@
-import Axios, { AxiosInstance } from 'axios'
+import Axios, { AxiosInstance, AxiosResponse } from 'axios'
 import * as Merge from 'deepmerge'
 import { buildByEnv, TukkiConfig, defaultConfig } from './config'
 
@@ -7,13 +7,13 @@ import Domain from './client/domain'
 
 import {
   TukkiAuthenticateArgs,
-  TukkiAuthenticateResult
+  TukkiAuthenticated
 } from './client/user.interface'
 import {
+  TukkiDomainCategories,
   TukkiDomainCategory,
-  TukkiDomainCategoriesResult,
-  TukkiMostRecommendedDomains,
-  TukkiRecommendedDomainsResult
+  TukkiRecommendedDomains,
+  TukkiMostRecommendedDomains
 } from './client/domain.interface'
 
 export default class Tukki implements User, Domain {
@@ -21,9 +21,9 @@ export default class Tukki implements User, Domain {
   public config: TukkiConfig
   public client: AxiosInstance
 
-  public authenticate: (args: TukkiAuthenticateArgs) => Promise<TukkiAuthenticateResult>
-  public domainCategories: () => Promise<TukkiDomainCategoriesResult>
-  public recommendedDomains: () => Promise<TukkiRecommendedDomainsResult>
+  public authenticate: (args: TukkiAuthenticateArgs) => Promise<AxiosResponse<TukkiAuthenticated>>
+  public domainCategories: () => Promise<AxiosResponse<TukkiDomainCategories>>
+  public recommendedDomains: () => Promise<AxiosResponse<TukkiRecommendedDomains>>
 
   constructor(config?: TukkiConfig) {
     this.config = config === undefined ? defaultConfig : Merge(defaultConfig, config)
@@ -41,9 +41,9 @@ Tukki.prototype.recommendedDomains = Domain.prototype.recommendedDomains
 export {
   TukkiConfig,
   TukkiAuthenticateArgs,
-  TukkiAuthenticateResult,
+  TukkiAuthenticated,
+  TukkiDomainCategories,
   TukkiDomainCategory,
-  TukkiDomainCategoriesResult,
-  TukkiMostRecommendedDomains,
-  TukkiRecommendedDomainsResult
+  TukkiRecommendedDomains,
+  TukkiMostRecommendedDomains
 }
