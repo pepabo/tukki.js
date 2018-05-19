@@ -1,4 +1,4 @@
-import Axios, { AxiosInstance AxiosResponse } from 'axios'
+import Axios, { AxiosInstance, AxiosResponse } from 'axios'
 import * as Merge from 'deepmerge'
 import { buildByEnv, TukkiConfig, defaultConfig } from './config'
 
