@@ -20,6 +20,7 @@
     "curly": true,
     "export-name": false,
     "import-name": false,
+    "interface-name": false,
     "interface-over-type-literal": true,
     "linebreak-style": [
       "LF",

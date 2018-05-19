@@ -2,7 +2,7 @@ import { AxiosRequestConfig } from 'axios'
 import * as Process from 'process'
 import * as Package from '../package.json'
 
-export interface IConfig {
+export interface TukkiConfig {
   axios?: AxiosRequestConfig
 }
 
@@ -10,7 +10,7 @@ const msec = 1000
 const sec = 60
 const min = 3
 
-export const defaultConfig: IConfig = {
+export const defaultConfig: TukkiConfig = {
   axios: {
     timeout: min * sec * msec,
     baseURL: 'https://muumuu-domain.com/api/v1',
@@ -20,8 +20,8 @@ export const defaultConfig: IConfig = {
   }
 }
 
-export function buildByEnv(): IConfig {
-  const c: IConfig = {}
+export function buildByEnv(): TukkiConfig {
+  const c: TukkiConfig = {}
   c.axios = {}
 
   if (Process.env.TUKKI_API_ENDPOINT !== undefined) {
