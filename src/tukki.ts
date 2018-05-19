@@ -16,7 +16,7 @@ import {
   IRecommendedDomainsResult
 } from './client/domain.interface'
 
-export default class Muu implements User, Domain {
+export default class Tukki implements User, Domain {
   public name: string = 'Muu'
   public config: IConfig
   public client: AxiosInstance
@@ -34,9 +34,9 @@ export default class Muu implements User, Domain {
     this.client = Axios.create(this.config.axios)
   }
 }
-Muu.prototype.authenticate = User.prototype.authenticate
-Muu.prototype.domainCategories = Domain.prototype.domainCategories
-Muu.prototype.recommendedDomains = Domain.prototype.recommendedDomains
+Tukki.prototype.authenticate = User.prototype.authenticate
+Tukki.prototype.domainCategories = Domain.prototype.domainCategories
+Tukki.prototype.recommendedDomains = Domain.prototype.recommendedDomains
 
 export {
   IConfig,

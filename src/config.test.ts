@@ -1,5 +1,5 @@
 import Test from 'ava'
-import {buildByEnv, defaultConfig} from './config'
+import { buildByEnv, defaultConfig } from './config'
 import * as Process from 'process'
 import * as Package from '../package.json'
 
@@ -21,8 +21,8 @@ Test('buildByEnv returns config', (t) => {
 })
 
 Test('buildByEnv returns config with env', (t) => {
-  Process.env.MUU_API_ENDPOINT = 'https://foo.com'
-  Process.env.MUU_TIMEOUT = '123'
+  Process.env.TUKKI_API_ENDPOINT = 'https://foo.com'
+  Process.env.TUKKI_TIMEOUT = '123'
 
   const expect = {
     axios: {

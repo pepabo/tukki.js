@@ -1,7 +1,7 @@
 import Test from 'ava'
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
-import Muu from '../muumuu'
+import Tukki from '../tukki'
 
 const OK = 200
 
@@ -24,8 +24,8 @@ Test('succeed get domain categories', async (t) => {
   const mock = new MockAdapter(axios)
   mock.onGet('/domain_categories').reply(OK, expected)
 
-  const muu = new Muu()
-  const ret = await muu.domainCategories()
+  const tukki = new Tukki()
+  const ret = await tukki.domainCategories()
 
   t.is(ret.status, OK)
   t.deepEqual(ret.data, expected)
@@ -46,8 +46,8 @@ Test('succeed get recommended domains', async (t) => {
   const mock = new MockAdapter(axios)
   mock.onGet('/recommended_domains').reply(OK, expected)
 
-  const muu = new Muu()
-  const ret = await muu.recommendedDomains()
+  const tukki = new Tukki()
+  const ret = await tukki.recommendedDomains()
 
   t.is(ret.status, OK)
   t.deepEqual(ret.data, expected)
