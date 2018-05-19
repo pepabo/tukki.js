@@ -1,33 +1,33 @@
-import Axios, {AxiosInstance} from 'axios'
+import Axios, { AxiosInstance } from 'axios'
 import * as Merge from 'deepmerge'
-import {buildByEnv, IConfig, defaultConfig} from './config'
+import { buildByEnv, TukkiConfig, defaultConfig } from './config'
 
 import User from './client/user'
 import Domain from './client/domain'
 
 import {
-  IAuthenticateArgs,
-  IAuthenticateResult
+  TukkiAuthenticateArgs,
+  TukkiAuthenticateResult
 } from './client/user.interface'
 import {
-  IDomainCategory,
-  IDomainCategoriesResult,
-  IMostRecommendedDomains,
-  IRecommendedDomainsResult
+  TukkiDomainCategory,
+  TukkiDomainCategoriesResult,
+  TukkiMostRecommendedDomains,
+  TukkiRecommendedDomainsResult
 } from './client/domain.interface'
 
 export default class Tukki implements User, Domain {
   public name: string = 'Muu'
-  public config: IConfig
+  public config: TukkiConfig
   public client: AxiosInstance
 
-  public authenticate: (args: IAuthenticateArgs) => Promise<IAuthenticateResult>
-  public domainCategories: () => Promise<IDomainCategoriesResult>
-  public recommendedDomains: () => Promise<IRecommendedDomainsResult>
+  public authenticate: (args: TukkiAuthenticateArgs) => Promise<TukkiAuthenticateResult>
+  public domainCategories: () => Promise<TukkiDomainCategoriesResult>
+  public recommendedDomains: () => Promise<TukkiRecommendedDomainsResult>
 
-  constructor(config?: IConfig) {
+  constructor(config?: TukkiConfig) {
     this.config = config === undefined ? defaultConfig : Merge(defaultConfig, config)
-    const configByEnv: IConfig = buildByEnv()
+    const configByEnv: TukkiConfig = buildByEnv()
     if (configByEnv !== {}) {
       this.config = Merge(this.config, configByEnv)
     }
@@ -39,11 +39,11 @@ Tukki.prototype.domainCategories = Domain.prototype.domainCategories
 Tukki.prototype.recommendedDomains = Domain.prototype.recommendedDomains
 
 export {
-  IConfig,
-  IAuthenticateArgs,
-  IAuthenticateResult,
-  IDomainCategory,
-  IDomainCategoriesResult,
-  IMostRecommendedDomains,
-  IRecommendedDomainsResult
+  TukkiConfig,
+  TukkiAuthenticateArgs,
+  TukkiAuthenticateResult,
+  TukkiDomainCategory,
+  TukkiDomainCategoriesResult,
+  TukkiMostRecommendedDomains,
+  TukkiRecommendedDomainsResult
 }
