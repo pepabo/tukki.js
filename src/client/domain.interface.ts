@@ -3,13 +3,23 @@ export interface IDomainCategory {
   tlds: string[]
 }
 
+export interface IDomainCategories {
+  popular: IDomainCategory
+  recommend: IDomainCategory
+  new: IDomainCategory
+}
+
 export interface IDomainCategoriesResult {
   status: number
-  data: {
-    popular: IDomainCategory;
-    recommend: IDomainCategory;
-    new: IDomainCategory;
-  }
+  data: IDomainCategories
+}
+
+export interface IRecommendedDomains {
+  for_corporates: string[]
+  popular: string[]
+  discount: string[]
+  multi_year_discount: string[]
+  most_recommended_domains: IMostRecommendedDomains[]
 }
 
 export interface IMostRecommendedDomains {
@@ -19,11 +29,5 @@ export interface IMostRecommendedDomains {
 
 export interface IRecommendedDomainsResult {
   status: number
-  data: {
-    for_corporates: string[];
-    popular: string[];
-    discount: string[];
-    multi_year_discount: string[];
-    most_recommended_domains: IMostRecommendedDomains[];
-  }
+  data: IRecommendedDomains
 }
