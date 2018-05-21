@@ -21,3 +21,10 @@ export interface TukkiMostRecommendedDomains {
   tld: string
   price: number
 }
+
+export interface TukkiIsDomainAvailable {
+  domain_name: string
+  available: boolean
+  expired: string
+  messages: string | null
+}

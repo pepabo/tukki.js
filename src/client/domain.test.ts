@@ -52,3 +52,21 @@ Test('succeed get recommended domains', async (t) => {
   t.is(ret.status, OK)
   t.deepEqual(ret.data, expected)
 })
+
+Test('succeed get domain available', async (t) => {
+  const expected = {
+    domain_name: 'example.com',
+    available: false,
+    expired: '2018-05-21T15:32:42.319+09:00',
+    messages: null
+  }
+
+  const mock = new MockAdapter(axios)
+  mock.onGet(`/domains/${expected.domain_name}/available`).reply(OK, expected)
+
+  const tukki = new Tukki()
+  const ret = await tukki.isDomainAvailable(expected.domain_name)
+
+  t.is(ret.status, OK)
+  t.deepEqual(ret.data, expected)
+})
