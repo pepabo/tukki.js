@@ -13,7 +13,8 @@ import {
   TukkiDomainCategories,
   TukkiDomainCategory,
   TukkiRecommendedDomains,
-  TukkiMostRecommendedDomains
+  TukkiMostRecommendedDomains,
+  TukkiIsDomainAvailable
 } from './client/domain.interface'
 
 export default class Tukki implements User, Domain {
@@ -24,6 +25,7 @@ export default class Tukki implements User, Domain {
   public authenticate: (args: TukkiAuthenticateArgs) => Promise<AxiosResponse<TukkiAuthenticated>>
   public domainCategories: () => Promise<AxiosResponse<TukkiDomainCategories>>
   public recommendedDomains: () => Promise<AxiosResponse<TukkiRecommendedDomains>>
+  public isDomainAvailable: (domain: string) => Promise<AxiosResponse<TukkiIsDomainAvailable>>
 
   constructor(config?: TukkiConfig) {
     this.config = config === undefined ? defaultConfig : Merge(defaultConfig, config)
@@ -37,6 +39,7 @@ export default class Tukki implements User, Domain {
 Tukki.prototype.authenticate = User.prototype.authenticate
 Tukki.prototype.domainCategories = Domain.prototype.domainCategories
 Tukki.prototype.recommendedDomains = Domain.prototype.recommendedDomains
+Tukki.prototype.isDomainAvailable = Domain.prototype.isDomainAvailable
 
 export {
   TukkiConfig,
@@ -45,5 +48,6 @@ export {
   TukkiDomainCategories,
   TukkiDomainCategory,
   TukkiRecommendedDomains,
-  TukkiMostRecommendedDomains
+  TukkiMostRecommendedDomains,
+  TukkiIsDomainAvailable
 }
