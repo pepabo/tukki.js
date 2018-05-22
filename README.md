@@ -31,6 +31,12 @@ if (res.status == 201) {
   const token = res.data.jwt
 }
 
+# get prices
+const res = await tukki.prices()
+if (res.status == 200) {
+  const prices = res.data
+}
+
 # get domain categories
 const res = await tukki.domainCategories()
 if (res.status == 200) {
