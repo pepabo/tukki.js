@@ -16,6 +16,7 @@ export interface TukkiDomainCategories {
 
 export interface TukkiDomainCategory {
   label: string
+  order: number
   tlds: string[]
 }
 
