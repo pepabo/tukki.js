@@ -2,6 +2,16 @@ export interface TukkiDomainCategories {
   popular: TukkiDomainCategory
   recommend: TukkiDomainCategory
   new: TukkiDomainCategory
+  business: TukkiDomainCategory
+  technology: TukkiDomainCategory
+  color: TukkiDomainCategory
+  region: TukkiDomainCategory
+  art: TukkiDomainCategory
+  fasion: TukkiDomainCategory
+  media: TukkiDomainCategory
+  food: TukkiDomainCategory
+  life: TukkiDomainCategory
+  other: TukkiDomainCategory
 }
 
 export interface TukkiDomainCategory {
