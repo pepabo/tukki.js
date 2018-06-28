@@ -4,6 +4,7 @@ import { buildByEnv, TukkiConfig, defaultConfig } from './config'
 
 import User from './client/user'
 import Price from './client/price'
+import Infomation from './client/information'
 import Domain from './client/domain'
 
 import {
@@ -21,6 +22,10 @@ import {
   TukkiMostRecommendedDomains,
   TukkiIsDomainAvailable
 } from './client/domain.interface'
+import {
+  TukkiInformationArgs,
+  TukkiInformation
+} from './client/information.interface'
 
 export default class Tukki implements User, Domain, Price {
   public name: string = 'Muu'
@@ -31,6 +36,7 @@ export default class Tukki implements User, Domain, Price {
   public domainCategories: () => Promise<AxiosResponse<TukkiDomainCategories>>
   public recommendedDomains: () => Promise<AxiosResponse<TukkiRecommendedDomains>>
   public prices: () => Promise<AxiosResponse<TukkiPrices>>
+  public informations: (args: TukkiInformationArgs) => Promise<AxiosResponse<TukkiInformation[]>>
   public isDomainAvailable: (domain: string) => Promise<AxiosResponse<TukkiIsDomainAvailable>>
 
   constructor(config?: TukkiConfig) {
@@ -47,6 +53,7 @@ Tukki.prototype.prices = Price.prototype.prices
 Tukki.prototype.domainCategories = Domain.prototype.domainCategories
 Tukki.prototype.recommendedDomains = Domain.prototype.recommendedDomains
 Tukki.prototype.isDomainAvailable = Domain.prototype.isDomainAvailable
+Tukki.prototype.informations = Infomation.prototype.informations
 
 export {
   TukkiConfig,
@@ -58,5 +65,7 @@ export {
   TukkiDomainCategory,
   TukkiRecommendedDomains,
   TukkiMostRecommendedDomains,
+  TukkiInformationArgs,
+  TukkiInformation,
   TukkiIsDomainAvailable
 }
