@@ -5,10 +5,8 @@ export interface TukkiInformation {
   info_id: number
   type: string
   importance: string
-  date: string
+  posted_at: string
   title: string
-  note: string
-  start_date: string
-  end_date: string
-  solved: string
+  body: string
+  solved: boolean
 }

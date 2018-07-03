@@ -13,12 +13,10 @@ Test('succeed get informations', async (t) => {
       info_id: 1,
       type: 'new_arrivals',
       importance: 'normal',
-      date: '20200701',
+      posted_at: '2020-07-01',
       title: 'I am Tukki!',
-      note: 'hello',
-      start_date: '20200101',
-      end_date: '20201231',
-      solved: '1'
+      body: 'hello',
+      solved: true
     }
   ]
 
