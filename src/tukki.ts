@@ -9,7 +9,8 @@ import Domain from './client/domain'
 
 import {
   TukkiAuthenticateArgs,
-  TukkiAuthenticated
+  TukkiAuthenticated,
+  TukkiUser
 } from './client/user.interface'
 import {
   TukkiPrices,
@@ -38,6 +39,7 @@ export default class Tukki implements User, Domain, Price {
   public prices: () => Promise<AxiosResponse<TukkiPrices>>
   public informations: (args: TukkiInformationArgs) => Promise<AxiosResponse<TukkiInformation[]>>
   public isDomainAvailable: (domain: string) => Promise<AxiosResponse<TukkiIsDomainAvailable>>
+  public aboutMe: () => Promise<AxiosResponse<TukkiUser>>
 
   constructor(config?: TukkiConfig) {
     this.config = config === undefined ? defaultConfig : Merge(defaultConfig, config)
@@ -49,6 +51,7 @@ export default class Tukki implements User, Domain, Price {
   }
 }
 Tukki.prototype.authenticate = User.prototype.authenticate
+Tukki.prototype.aboutMe = User.prototype.aboutMe
 Tukki.prototype.prices = Price.prototype.prices
 Tukki.prototype.domainCategories = Domain.prototype.domainCategories
 Tukki.prototype.recommendedDomains = Domain.prototype.recommendedDomains
@@ -59,6 +62,7 @@ export {
   TukkiConfig,
   TukkiAuthenticateArgs,
   TukkiAuthenticated,
+  TukkiUser,
   TukkiPrices,
   TukkiDomainPrices,
   TukkiDomainCategories,
