@@ -43,7 +43,9 @@
     "ci": "npm run test && npm run lint",
     "clean": "rm -rf lib",
     "test": "npm run build && ava -v",
-    "lint": "tslint -p tsconfig.json -c tslint.json src/**/*.ts"
+    "lint": "tslint -p tsconfig.json -c tslint.json src/**/*.ts",
+    "release": "npm run build && npm run git:tag && npm publish",
+    "git:tag": "git tag v$(cat package.json | jq -r '.version') && git push origin v$(cat package.json | jq -r '.version')"
   },
   "ava": {
     "files": [
