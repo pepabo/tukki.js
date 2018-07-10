@@ -14,6 +14,7 @@ import {
 } from './client/user.interface'
 import {
   TukkiPrices,
+  TukkiDomainPrice,
   TukkiDomainPrices
 } from './client/price.interface'
 import {
@@ -64,6 +65,7 @@ export {
   TukkiAuthenticated,
   TukkiUser,
   TukkiPrices,
+  TukkiDomainPrice,
   TukkiDomainPrices,
   TukkiDomainCategories,
   TukkiDomainCategory,

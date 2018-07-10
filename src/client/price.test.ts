@@ -1,20 +1,40 @@
 import Test from 'ava'
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
-import Tukki from '../tukki'
+import Tukki, { TukkiPrices } from '../tukki'
 
 const OK = 200
 
 Test('succeed get prices', async (t) => {
-  const prices = {
+  const prices: TukkiPrices = {
     domains: {
       com: {
-        original_price: 1480,
-        campaign_price: 1160
+        new_order: {
+          original_price: 1480,
+          campaign_price: 1160
+        },
+        continue: {
+          original_price: 1480,
+          campaign_price: null
+        },
+        transfer: {
+          original_price: 1480,
+          campaign_price: null
+        }
       },
       soccer: {
-        original_price: 2980,
-        campaign_price: null
+        new_order: {
+          original_price: 2980,
+          campaign_price: null
+        },
+        continue: {
+          original_price: 2980,
+          campaign_price: null
+        },
+        transfer: {
+          original_price: null,
+          campaign_price: null
+        }
       }
     }
   }
