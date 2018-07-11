@@ -11,29 +11,41 @@ Test('succeed get prices', async (t) => {
       com: {
         new_order: {
           original_price: 1480,
-          campaign_price: 1160
+          campaign_price: 1160,
+          jp_original_price: 1480,
+          jp_campaign_price: 1160
         },
         continue: {
           original_price: 1480,
-          campaign_price: null
+          campaign_price: null,
+          jp_original_price: 1480,
+          jp_campaign_price: null
         },
         transfer: {
           original_price: 1480,
-          campaign_price: null
+          campaign_price: null,
+          jp_original_price: 1480,
+          jp_campaign_price: null
         }
       },
       soccer: {
         new_order: {
           original_price: 2980,
-          campaign_price: null
+          campaign_price: null,
+          jp_original_price: null,
+          jp_campaign_price: null
         },
         continue: {
           original_price: 2980,
-          campaign_price: null
+          campaign_price: null,
+          jp_original_price: null,
+          jp_campaign_price: null
         },
         transfer: {
           original_price: null,
-          campaign_price: null
+          campaign_price: null,
+          jp_original_price: null,
+          jp_campaign_price: null
         }
       }
     }
