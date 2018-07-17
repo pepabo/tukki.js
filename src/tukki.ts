@@ -21,7 +21,6 @@ import {
   TukkiDomainCategories,
   TukkiDomainCategory,
   TukkiRecommendedDomains,
-  TukkiMostRecommendedDomains,
   TukkiIsDomainAvailable
 } from './client/domain.interface'
 import {
@@ -70,7 +69,6 @@ export {
   TukkiDomainCategories,
   TukkiDomainCategory,
   TukkiRecommendedDomains,
-  TukkiMostRecommendedDomains,
   TukkiInformationArgs,
   TukkiInformation,
   TukkiIsDomainAvailable

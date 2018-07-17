@@ -25,12 +25,7 @@ export interface TukkiRecommendedDomains {
   popular: string[]
   discount: string[]
   multi_year_discount: string[]
-  most_recommended_domains: TukkiMostRecommendedDomains[]
-}
-
-export interface TukkiMostRecommendedDomains {
-  tld: string
-  price: number
+  most_recommended_domains: string[]
 }
 
 export interface TukkiIsDomainAvailable {
