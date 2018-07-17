@@ -37,10 +37,7 @@ Test('succeed get recommended domains', async (t) => {
     popular: ['shop'],
     discount: [],
     multi_year_discount: ['com', 'net', 'org', 'biz', 'info', 'work', 'club', 'tokyo', 'xyz', 'shop'],
-    most_recommended_domains: [
-      { tld: 'com', price: 1160 },
-      { tld: 'net', price: 1260 }
-    ]
+    most_recommended_domains: ['com', 'net']
   }
 
   const mock = new MockAdapter(axios)
