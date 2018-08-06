@@ -18,6 +18,8 @@ import {
   TukkiDomainPrices
 } from './client/price.interface'
 import {
+  TukkiDomainMasters,
+  TukkiDomainMaster,
   TukkiDomainCategories,
   TukkiDomainCategory,
   TukkiRecommendedDomains,
@@ -34,6 +36,7 @@ export default class Tukki implements User, Domain, Price {
   public client: AxiosInstance
 
   public authenticate: (args: TukkiAuthenticateArgs) => Promise<AxiosResponse<TukkiAuthenticated>>
+  public domainMasters: () => Promise<AxiosResponse<TukkiDomainMasters>>
   public domainCategories: () => Promise<AxiosResponse<TukkiDomainCategories>>
   public recommendedDomains: () => Promise<AxiosResponse<TukkiRecommendedDomains>>
   public prices: () => Promise<AxiosResponse<TukkiPrices>>
@@ -53,6 +56,7 @@ export default class Tukki implements User, Domain, Price {
 Tukki.prototype.authenticate = User.prototype.authenticate
 Tukki.prototype.aboutMe = User.prototype.aboutMe
 Tukki.prototype.prices = Price.prototype.prices
+Tukki.prototype.domainMasters = Domain.prototype.domainMasters
 Tukki.prototype.domainCategories = Domain.prototype.domainCategories
 Tukki.prototype.recommendedDomains = Domain.prototype.recommendedDomains
 Tukki.prototype.isDomainAvailable = Domain.prototype.isDomainAvailable
@@ -66,6 +70,8 @@ export {
   TukkiPrices,
   TukkiDomainPrice,
   TukkiDomainPrices,
+  TukkiDomainMasters,
+  TukkiDomainMaster,
   TukkiDomainCategories,
   TukkiDomainCategory,
   TukkiRecommendedDomains,

@@ -1,3 +1,15 @@
+export interface TukkiDomainMasters {
+  domain_masters: TukkiDomainMaster[]
+}
+
+export interface TukkiDomainMaster {
+  tld: string
+  contract_term_min: number
+  contract_term_max: number
+  whois_proxy_flag: boolean
+  registrar: string
+}
+
 export interface TukkiDomainCategories {
   popular: TukkiDomainCategory
   recommend: TukkiDomainCategory

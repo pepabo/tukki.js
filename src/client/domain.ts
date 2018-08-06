@@ -1,6 +1,7 @@
 import { AxiosInstance, AxiosResponse } from 'axios'
 
 import {
+  TukkiDomainMasters,
   TukkiDomainCategories,
   TukkiRecommendedDomains,
   TukkiIsDomainAvailable
@@ -9,7 +10,11 @@ import {
 export default class Domain {
   public client: AxiosInstance
 
-   public async domainCategories(): Promise<AxiosResponse<TukkiDomainCategories>> {
+  public async domainMasters(): Promise<AxiosResponse<TukkiDomainMasters>> {
+    return this.client.get('/domain_master')
+  }
+
+  public async domainCategories(): Promise<AxiosResponse<TukkiDomainCategories>> {
     return this.client.get('/domain_categories')
   }
 
