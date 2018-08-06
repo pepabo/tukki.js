@@ -5,6 +5,36 @@ import Tukki from '../tukki'
 
 const OK = 200
 
+Test('succeed get domain masters', async (t) => {
+  const expected = {
+    domain_masters: [
+      {
+        tld: 'com',
+        contract_term_min: 1,
+        contract_term_max: 10,
+        whois_proxy_flag: true,
+        registrar: 'onamae'
+      },
+      {
+        tld: 'in',
+        contract_term_min: 1,
+        contract_term_max: 1,
+        whois_proxy_flag: false,
+        registrar: 'no_new_order'
+      }
+    ]
+  }
+
+  const mock = new MockAdapter(axios)
+  mock.onGet('/domain_master').reply(OK, expected)
+
+  const tukki = new Tukki()
+  const ret = await tukki.domainMasters()
+
+  t.is(ret.status, OK)
+  t.deepEqual(ret.data, expected)
+})
+
 Test('succeed get domain categories', async (t) => {
   const expected = {
     popular: {
