@@ -5,7 +5,10 @@ import Tukki from '../tukki'
 
 const OK = 200
 
-import { TukkiInformation } from './information.interface'
+import {
+  TukkiInformation,
+  TukkiMaintenances
+} from './information.interface'
 
 Test('succeed get informations', async (t) => {
   const informations: TukkiInformation[] = [
@@ -28,4 +31,40 @@ Test('succeed get informations', async (t) => {
 
   t.is(ret.status, OK)
   t.deepEqual(ret.data, informations)
+})
+
+Test('succeed get maintenances', async (t) => {
+  // exist maintenances
+  const maintenances: TukkiMaintenances = {
+    registry: [
+      {
+        info_id: 1,
+        begin_at: '2018-08-01 00:00:00',
+        end_at: '2018-08-31 23:59:59',
+        tlds: ['com', 'net']
+      }
+    ],
+    osaipo: {
+      info_id: 1,
+      begin_at: '2018-08-01 00:00:00',
+      end_at: '2018-08-31 23:59:59',
+      tlds: ['com', 'net']
+    }
+  }
+
+  const mock = new MockAdapter(axios)
+  mock.onGet('/maintenances').reply(OK, maintenances)
+
+  const tukki = new Tukki()
+  let ret = await tukki.maintenances()
+
+  t.is(ret.status, OK)
+  t.deepEqual(ret.data, maintenances)
+
+  // not exists maintenances
+  mock.onGet('/maintenances').reply(OK, {})
+  ret = await tukki.maintenances()
+
+  t.is(ret.status, OK)
+  t.deepEqual(ret.data, {})
 })

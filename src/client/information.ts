@@ -1,7 +1,8 @@
 import { AxiosInstance, AxiosResponse } from 'axios'
 import {
   TukkiInformationArgs,
-  TukkiInformation
+  TukkiInformation,
+  TukkiMaintenances
 } from './information.interface'
 
 export default class Infomation {
@@ -9,5 +10,9 @@ export default class Infomation {
 
   public async informations(args: TukkiInformationArgs): Promise<AxiosResponse<TukkiInformation[]>> {
     return this.client.get('/informations', args)
+  }
+
+  public async maintenances(): Promise<AxiosResponse<TukkiMaintenances>> {
+    return this.client.get('/maintenances')
   }
 }
