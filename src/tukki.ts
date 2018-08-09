@@ -27,7 +27,9 @@ import {
 } from './client/domain.interface'
 import {
   TukkiInformationArgs,
-  TukkiInformation
+  TukkiInformation,
+  TukkiMaintenances,
+  TukkiMaintenance
 } from './client/information.interface'
 
 export default class Tukki implements User, Domain, Price {
@@ -41,6 +43,7 @@ export default class Tukki implements User, Domain, Price {
   public recommendedDomains: () => Promise<AxiosResponse<TukkiRecommendedDomains>>
   public prices: () => Promise<AxiosResponse<TukkiPrices>>
   public informations: (args: TukkiInformationArgs) => Promise<AxiosResponse<TukkiInformation[]>>
+  public maintenances: () => Promise<AxiosResponse<TukkiMaintenances>>
   public isDomainAvailable: (domain: string) => Promise<AxiosResponse<TukkiIsDomainAvailable>>
   public aboutMe: () => Promise<AxiosResponse<TukkiUser>>
 
@@ -61,6 +64,7 @@ Tukki.prototype.domainCategories = Domain.prototype.domainCategories
 Tukki.prototype.recommendedDomains = Domain.prototype.recommendedDomains
 Tukki.prototype.isDomainAvailable = Domain.prototype.isDomainAvailable
 Tukki.prototype.informations = Infomation.prototype.informations
+Tukki.prototype.maintenances = Infomation.prototype.maintenances
 
 export {
   TukkiConfig,
@@ -77,5 +81,7 @@ export {
   TukkiRecommendedDomains,
   TukkiInformationArgs,
   TukkiInformation,
+  TukkiMaintenances,
+  TukkiMaintenance,
   TukkiIsDomainAvailable
 }
