@@ -4,7 +4,8 @@ import {
   TukkiDomainMasters,
   TukkiDomainCategories,
   TukkiRecommendedDomains,
-  TukkiIsDomainAvailable
+  TukkiIsDomainAvailable,
+  TukkiCheckTmch
 } from './domain.interface'
 
 export default class Domain {
@@ -24,5 +25,15 @@ export default class Domain {
 
   public async isDomainAvailable(domain: string): Promise<AxiosResponse<TukkiIsDomainAvailable>> {
     return this.client.get(`domains/${domain}/available`)
+  }
+
+  public async checkTmch(domain: string): Promise<AxiosResponse<TukkiCheckTmch>> {
+    const internalServerError = 500
+
+    return this.client.get(`domains/${domain}/tmch`, {
+      validateStatus: (status) => {
+        return status < internalServerError
+      }
+    })
   }
 }

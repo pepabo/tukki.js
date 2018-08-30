@@ -46,3 +46,6 @@ export interface TukkiIsDomainAvailable {
   expired: string
   messages: string | null
 }
+
+export interface TukkiCheckTmch {
+}
