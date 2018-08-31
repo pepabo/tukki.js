@@ -4,6 +4,8 @@ import MockAdapter from 'axios-mock-adapter'
 import Tukki from '../tukki'
 
 const OK = 200
+const NoContent = 204
+const NotFound = 404
 
 Test('succeed get domain masters', async (t) => {
   const expected = {
@@ -96,4 +98,32 @@ Test('succeed get domain available', async (t) => {
 
   t.is(ret.status, OK)
   t.deepEqual(ret.data, expected)
+})
+
+Test('tmch registerd', async (t) => {
+  const mock = new MockAdapter(axios)
+  const expected = {
+    domain_name: 'registerd.test'
+  }
+
+  mock.onGet(`/domains/${expected.domain_name}/tmch`).reply(NoContent, expected)
+
+  const tukki = new Tukki()
+  const ret = await tukki.checkTmch(expected.domain_name)
+
+  t.is(ret.status, NoContent)
+})
+
+Test('tmch not found', async (t) => {
+  const mock = new MockAdapter(axios)
+  const expected = {
+    domain_name: 'not-registerd.test'
+  }
+
+  mock.onGet(`/domains/${expected.domain_name}/tmch`).reply(NotFound, expected)
+
+  const tukki = new Tukki()
+  const ret = await tukki.checkTmch(expected.domain_name)
+
+  t.is(ret.status, NotFound)
 })
