@@ -30,6 +30,9 @@ export default class Domain {
   public async checkTmch(domain: string): Promise<AxiosResponse<TukkiCheckTmch>> {
     const internalServerError = 500
 
+    // Handling under 500 status code to return.
+    // Because test fails when status code is out of the range of 2xx.
+    // https://github.com/axios/axios#handling-errors
     return this.client.get(`domains/${domain}/tmch`, {
       validateStatus: (status) => {
         return status < internalServerError
