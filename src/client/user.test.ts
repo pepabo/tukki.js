@@ -31,6 +31,7 @@ Test('failed authenticate', async (t) => {
 
 Test('about me', async (t) => {
   const me: TukkiUser = {
+    user_id: 'MA12345678',
     muumuu_id: 'tukki@example.com',
     muumuu_mail_applied: true
   }

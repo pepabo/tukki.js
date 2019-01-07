@@ -8,6 +8,7 @@ export interface TukkiAuthenticated {
 }
 
 export interface TukkiUser {
+  user_id: string
   muumuu_id: string
   muumuu_mail_applied: boolean
 }
