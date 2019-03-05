@@ -33,7 +33,8 @@ Test('about me', async (t) => {
   const me: TukkiUser = {
     user_id: 'MA12345678',
     muumuu_id: 'tukki@example.com',
-    muumuu_mail_applied: true
+    muumuu_mail_applied: true,
+    domain_count: 0
   }
   const mock = new MockAdapter(axios)
   mock.onGet('/me').reply(OK, me)
