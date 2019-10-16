@@ -12,6 +12,7 @@ export interface TukkiInformation {
 }
 
 export interface TukkiMaintenances {
+  registrar?: TukkiMaintenance[]
   registry?: TukkiMaintenance[]
   muu_db?: TukkiMaintenance
   muu_dns?: TukkiMaintenance
@@ -32,6 +33,7 @@ export interface TukkiMaintenances {
 export interface TukkiMaintenance {
   begin_at: string
   end_at: string
-  info_id: number | null
+  info_id?: number | null
   tlds?: string[]
+  name?: string
 }
