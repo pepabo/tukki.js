@@ -36,6 +36,13 @@ Test('succeed get informations', async (t) => {
 Test('succeed get maintenances', async (t) => {
   // exist maintenances
   const maintenances: TukkiMaintenances = {
+    registrar: [
+      {
+        begin_at: '2018-08-01 00:00:00',
+        end_at: '2018-08-31 23:59:59',
+        name: 'jprs'
+      }
+    ],
     registry: [
       {
         info_id: 1,
