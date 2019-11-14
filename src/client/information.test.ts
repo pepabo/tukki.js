@@ -33,6 +33,29 @@ Test('succeed get informations', async (t) => {
   t.deepEqual(ret.data, informations)
 })
 
+Test('succeed get campaign', async (t) => {
+  const informations: TukkiInformation[] = [
+    {
+      info_id: 1,
+      type: 'campaign',
+      importance: 'normal',
+      posted_at: '2020-07-01',
+      title: 'I am Tukki!',
+      body: 'hello',
+      solved: true
+    }
+  ]
+
+  const mock = new MockAdapter(axios)
+  mock.onGet('/informations/campaign').reply(OK, informations)
+
+  const tukki = new Tukki()
+  const ret = await tukki.campaigns({})
+
+  t.is(ret.status, OK)
+  t.deepEqual(ret.data, informations)
+})
+
 Test('succeed get maintenances', async (t) => {
   // exist maintenances
   const maintenances: TukkiMaintenances = {

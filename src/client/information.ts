@@ -12,6 +12,10 @@ export default class Infomation {
     return this.client.get('/informations', args)
   }
 
+  public async campaigns(args: TukkiInformationArgs): Promise<AxiosResponse<TukkiInformation[]>> {
+    return this.client.get('/informations/campaign', args)
+  }
+
   public async maintenances(): Promise<AxiosResponse<TukkiMaintenances>> {
     return this.client.get('/maintenances')
   }
